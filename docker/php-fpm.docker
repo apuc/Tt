@@ -1,0 +1,8 @@
+FROM php:7.2-fpm
+
+RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client libpng-dev \
+    && docker-php-ext-install pdo_mysql gd
+RUN apt-get update && apt-get install -y --no-install-recommends libmagickwand-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /var/www
