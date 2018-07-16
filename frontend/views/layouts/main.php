@@ -37,9 +37,9 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('app', 'Goods'), 'url' => ['/goods']],
-        ['label' => Yii::t('app', 'Categories'), 'url' => ['/categories']],
-        ['label' => Yii::t('app', 'Providers'), 'url' => ['/providers']],
+        ['label' => Yii::t('app', 'Goods'), 'url' => ['/goods/index']],
+        ['label' => Yii::t('app', 'Categories'), 'url' => ['/categories/index']],
+        ['label' => Yii::t('app', 'Providers'), 'url' => ['/providers/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
