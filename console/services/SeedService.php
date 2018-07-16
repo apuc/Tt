@@ -42,7 +42,7 @@ class SeedService
             $category = new Category();
 
             $category->name = $this->factory->unique()->streetName;
-            $category->sort = $this->factory->numberBetween(1, 100);
+            $category->sort = $this->factory->unique()->numberBetween(0, $count * 100);
             $category->description = $this->factory->text(300);
             $category->status = $this->factory->randomElement([
                 $category::STATUS_DISABLED, $category::STATUS_ENABLED
@@ -65,8 +65,8 @@ class SeedService
         for ($i = 0 ; $i < $count; $i++) {
             $provider = new Provider();
 
-            $provider->name = $this->factory->company;
-            $provider->sort = $this->factory->numberBetween(1, 100);
+            $provider->name = $this->factory->unique()->company;
+            $provider->sort = $this->factory->unique()->numberBetween(0, $count * 100);
 
             if (!$provider->save()) {
                 throw new Exception(implode(', ', $provider->errors));

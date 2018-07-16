@@ -16,7 +16,7 @@ class m180714_081953_create_categories_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->unique(),
             'description' => $this->text(),
-            'sort' => $this->integer(),
+            'sort' => $this->integer()->unique(),
             'status' => $this->string(50),
             'created_at' => $this->dateTime(),
             'updated_at' => $this->dateTime()

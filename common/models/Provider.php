@@ -37,6 +37,8 @@ class Provider extends \yii\db\ActiveRecord
             [['sort'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
+            [['name'], 'unique'],
+            [['sort'], 'unique'],
         ];
     }
 

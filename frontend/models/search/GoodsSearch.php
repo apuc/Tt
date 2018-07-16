@@ -56,8 +56,8 @@ class GoodsSearch extends Goods
     public function search($params)
     {
         $query = Goods::find()->joinWith(['category', 'provider']);
-        $categoryProperty = Category::tableName() . '.name';
-        $providerProperty = Provider::tableName() . '.name';
+        $categoryProperty = Category::tableName() . '.sort';
+        $providerProperty = Provider::tableName() . '.sort';
         // add conditions that should always apply here
 
 

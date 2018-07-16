@@ -15,7 +15,7 @@ class m180714_082404_create_providers_table extends Migration
         $this->createTable('providers', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->unique(),
-            'sort' => $this->integer(),
+            'sort' => $this->integer()->unique(),
             'created_at' => $this->dateTime(),
             'updated_at' => $this->dateTime()
         ]);

@@ -43,7 +43,10 @@ class Category extends \yii\db\ActiveRecord
             [['sort'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
+            [['status'], 'string', 'max' => 50],
             [['status'], 'in', 'range' => [self::STATUS_ENABLED, self::STATUS_DISABLED]],
+            [['name'], 'unique'],
+            [['sort'], 'unique'],
         ];
     }
 
